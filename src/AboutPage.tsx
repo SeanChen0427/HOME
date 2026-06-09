@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import { siteContent } from "./data/site";
 
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const url = (path: string) => path.startsWith("/") && !path.startsWith("//") ? `${base}${path}` : path;
+
 const ArrowIcon = () => (
   <svg aria-hidden="true" viewBox="0 0 24 24">
     <path d="M5 12h13M13 6l6 6-6 6" />
@@ -26,7 +29,7 @@ export function AboutPage() {
       </a>
 
       <header className="site-header">
-        <a className="brand" href="/" aria-label="返回熊恩老師首頁">
+        <a className="brand" href={url("/")} aria-label="返回熊恩老師首頁">
           <span className="brand-symbol">熊</span>
           <span>
             <strong>熊恩老師</strong>
@@ -39,7 +42,7 @@ export function AboutPage() {
           <a href="#method">教學方式</a>
           <a href="#topics">邀約主題</a>
           <a href="#organizer">合作資訊</a>
-          <a href="/">回到首頁</a>
+          <a href={url("/")}>回到首頁</a>
         </nav>
 
         <a
@@ -227,7 +230,7 @@ export function AboutPage() {
         </section>
 
         <div className="partner-entry page-shell">
-          <a href="/bni">BNI 夥伴專區</a>
+          <a href={url("/bni")}>BNI 夥伴專區</a>
         </div>
       </main>
     </>

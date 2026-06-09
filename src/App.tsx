@@ -7,6 +7,9 @@ const ArrowIcon = () => (
   </svg>
 );
 
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const url = (path: string) => path.startsWith("/") && !path.startsWith("//") && !path.startsWith("/#") ? `${base}${path}` : path;
+
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -33,7 +36,7 @@ function App() {
 
         <nav className="desktop-nav" aria-label="主要導覽">
           {siteContent.navigation.map((item) => (
-            <a href={item.href} key={item.href}>
+            <a href={url(item.href)} key={item.href}>
               {item.label}
             </a>
           ))}
@@ -62,7 +65,7 @@ function App() {
         >
           {siteContent.navigation.map((item) => (
             <a
-              href={item.href}
+              href={url(item.href)}
               key={item.href}
               onClick={() => setMenuOpen(false)}
             >

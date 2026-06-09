@@ -5,7 +5,8 @@ import { AboutPage } from "./AboutPage";
 import { BniPage } from "./BniPage";
 import "./styles.css";
 
-const path = window.location.pathname.replace(/\/+$/, "") || "/";
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const path = window.location.pathname.replace(base, "").replace(/\/+$/, "") || "/";
 const page =
   path === "/about" ? <AboutPage /> : path === "/bni" ? <BniPage /> : <App />;
 

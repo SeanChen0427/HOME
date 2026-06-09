@@ -1,7 +1,10 @@
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const url = (path: string) => path.startsWith("/") && !path.startsWith("//") ? `${base}${path}` : path;
+
 export function BniPage() {
   return (
     <main className="bni-page">
-      <a className="bni-back" href="/about">
+      <a className="bni-back" href={url("/about")}>
         ← 返回講師介紹
       </a>
       <section>
