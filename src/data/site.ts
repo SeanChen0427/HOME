@@ -141,7 +141,7 @@ export const siteContent = {
       "我是陳奎翔，大家比較常叫我熊恩老師。我長期替品牌與店家操作社群，熟悉業主真正會遇到的問題，也知道哪些方法能用回工作現場。",
     positioning:
       "比起把八小時內容塞進一天，我更喜歡用 2–3 小時聚焦一個主軸。把邏輯說清楚、帶著學員實際操作，讓學員在下課前完成一個能繼續使用的成果。",
-    profileImage: "/images/sean-profile.webp",
+    profileImage: "https://i.ibb.co/h11y2M8m/111.jpg",
     profileImageAlt: "熊恩老師 Sean Chen",
     facts: [
       "超過 8 年第一線品牌與社群操作經驗",
